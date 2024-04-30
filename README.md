@@ -1,1 +1,1 @@
-quotebot is a discord bot full of fun and excitment
+quotebot is a discord bot full of fun and excitment!
