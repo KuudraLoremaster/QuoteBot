@@ -10,7 +10,7 @@ usersj = require("./users.json")
 quotesj = require('./quotes.json')
 raritiesj = require("./rarities.json")
 
-users = users.users
+users = usersj.users
 quotes = quotesj.quotes
 rarities = raritiesj.rarities
 
