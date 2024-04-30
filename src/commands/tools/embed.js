@@ -24,22 +24,22 @@ module.exports = {
             .setTitle('You got ' + chosen_quote.name)
             .setDescription('The next time you can quote is in <t:${cooldown}:R>')
             .setColor(0x18e1ee)
-            .setImage(quote.quote)
-            .setThumbnail(quote.pfp)
+            .setImage(chosen_quote.quote)
+            .setThumbnail(chosen_quote.pfp)
             .setTimestamp(Date.now())
             .setAuthor({
                 iconURL: interaction.user.displayAvatarURL(),
                 name: interaction.user.tag
             })
-            .setURL(quote.msg_link)
+            .setURL(chosen_quote.msg_link)
             .addFields([{
-                name: rarities[quote.rarity],
-                value: quote.bucks + ' quotebucks',
+                name: rarities[chosen_quote.rarity],
+                value: chosen_quote.bucks + ' quotebucks',
                 inline: false
             },
             {
-                name: 'Quote by '+ quote.origin,
-                value: quote.reason,
+                name: 'Quote by '+ chosen_quote.origin,
+                value: chosen_quote.reason,
                 inline: false    
             }]);
 
