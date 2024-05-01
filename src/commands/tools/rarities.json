@@ -2,9 +2,41 @@
     "rarities":{
 
         "0":{
-            "id": 0,
+            "bucks": 10,
+            "color": [255, 255, 255],
             "name": "Common"
+        },
+        "1":{
+            "bucks": 50,
+            "color": [0, 255, 0],
+            "name": "Uncommon"
+        },
+        "2":{
+            "bucks": 100,
+            "color": [33, 33, 194],
+            "name": "Rare"
+        },
+        "3":{
+            "bucks": 500,
+            "color": [99, 45, 145],
+            "name": "Epic"
+        },
+        "4":{
+            "bucks": 1000,
+            "color": [255, 255, 0],
+            "name": "Legendary"
+        },
+        "5":{
+            "bucks": 5000,
+            "color": [255, 50, 255],
+            "name": "Unique"
+        },
+        "6":{
+            "bucks": 10000,
+            "color": [0, 255, 255],
+            "name": "THE QUOTE"
         }
+
     }
 
 }

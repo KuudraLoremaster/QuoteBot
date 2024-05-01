@@ -1,10 +1,8 @@
 {
     "quotes": [{
     "0":{
-            "id": 0,
             "name": "Unborn Child",
             "pfp": "https://cdn.discordapp.com/attachments/1120808543658975346/1233676156041953300/adae26e38a2f862028a83634911d6c66.webp?ex=662df5f4&is=662ca474&hm=eb1fff7dc0fe2acf4782e29bc7cb326f438f27822500dc6934830742360e3aa2&",
-            "bucks": 1000,
             "origin": "UwUDwagon",
             "reason": "UwUdwagon said this because idfk he's retarded",
             "quote": "https://cdn.discordapp.com/attachments/1120808543658975346/1233675769109155920/Screenshot_3.png?ex=662df597&is=662ca417&hm=39c98cfb9e86dadcf38500b3dd4d3e4c0776faa135a136d0b22ba5c75945ae82&",
@@ -12,16 +10,70 @@
             "msg_link": "https://discord.com/channels/1087889803799969814/1091116865373356142/1150478679856656424"
         },
     "1":{
-            "id": 1,
             "name": "Fuck me in the asshole",
             "pfp": "https://cdn.discordapp.com/attachments/1162056243721031733/1233721641196847236/92ab2b7c3efbb5d470afd9383aed1bf2.webp?ex=662e2050&is=662cced0&hm=e1d2700acf0df38f233ae651aba36c273662b1246917dde0c428167ab55731df&",
-            "bucks": 250,
             "origin": "pixelated_face",
-            "reason": "magnus backdoor",
+            "reason": "magnus quote",
             "quote": "https://cdn.discordapp.com/attachments/1164838382195724388/1230242427374403674/image.png?ex=662dfe4b&is=662caccb&hm=4328c57c830c4bc4a35d715a8298a543944ea8ad7f9c611c7d91ffdc4bed0924&",
             "rarity": 0,
             "msg_link": "https://discord.com/channels/1087889803799969814/1091116865373356142/1150478679856656424"
+        },
+        "2":{
+
+            "name": "UNCOMMON",
+            "pfp": "https://cdn.discordapp.com/attachments/1120808543658975346/1233676156041953300/adae26e38a2f862028a83634911d6c66.webp?ex=662df5f4&is=662ca474&hm=eb1fff7dc0fe2acf4782e29bc7cb326f438f27822500dc6934830742360e3aa2&",
+            "origin": "UwUDwagon",
+            "reason": "UwUdwagon said this because idfk he's retarded",
+            "quote": "https://cdn.discordapp.com/attachments/1120808543658975346/1233675769109155920/Screenshot_3.png?ex=662df597&is=662ca417&hm=39c98cfb9e86dadcf38500b3dd4d3e4c0776faa135a136d0b22ba5c75945ae82&",
+            "rarity": 1,
+            "msg_link": "https://discord.com/channels/1087889803799969814/1091116865373356142/1150478679856656424"
+        },
+        "3":{
+            "name": "RARE",
+            "pfp": "https://cdn.discordapp.com/attachments/1120808543658975346/1233676156041953300/adae26e38a2f862028a83634911d6c66.webp?ex=662df5f4&is=662ca474&hm=eb1fff7dc0fe2acf4782e29bc7cb326f438f27822500dc6934830742360e3aa2&",
+            "origin": "UwUDwagon",
+            "reason": "UwUdwagon said this because idfk he's retarded",
+            "quote": "https://cdn.discordapp.com/attachments/1120808543658975346/1233675769109155920/Screenshot_3.png?ex=662df597&is=662ca417&hm=39c98cfb9e86dadcf38500b3dd4d3e4c0776faa135a136d0b22ba5c75945ae82&",
+            "rarity": 2,
+            "msg_link": "https://discord.com/channels/1087889803799969814/1091116865373356142/1150478679856656424"
+        },
+        "4":{
+            "name": "EPIC",
+            "pfp": "https://cdn.discordapp.com/attachments/1120808543658975346/1233676156041953300/adae26e38a2f862028a83634911d6c66.webp?ex=662df5f4&is=662ca474&hm=eb1fff7dc0fe2acf4782e29bc7cb326f438f27822500dc6934830742360e3aa2&",
+            "origin": "UwUDwagon",
+            "reason": "UwUdwagon said this because idfk he's retarded",
+            "quote": "https://cdn.discordapp.com/attachments/1120808543658975346/1233675769109155920/Screenshot_3.png?ex=662df597&is=662ca417&hm=39c98cfb9e86dadcf38500b3dd4d3e4c0776faa135a136d0b22ba5c75945ae82&",
+            "rarity": 3,
+            "msg_link": "https://discord.com/channels/1087889803799969814/1091116865373356142/1150478679856656424"
+        },
+        "5":{
+            "name": "LEGENDARY",
+            "pfp": "https://cdn.discordapp.com/attachments/1120808543658975346/1233676156041953300/adae26e38a2f862028a83634911d6c66.webp?ex=662df5f4&is=662ca474&hm=eb1fff7dc0fe2acf4782e29bc7cb326f438f27822500dc6934830742360e3aa2&",
+            "origin": "UwUDwagon",
+            "reason": "UwUdwagon said this because idfk he's retarded",
+            "quote": "https://cdn.discordapp.com/attachments/1120808543658975346/1233675769109155920/Screenshot_3.png?ex=662df597&is=662ca417&hm=39c98cfb9e86dadcf38500b3dd4d3e4c0776faa135a136d0b22ba5c75945ae82&",
+            "rarity": 4,
+            "msg_link": "https://discord.com/channels/1087889803799969814/1091116865373356142/1150478679856656424"
+        },
+        "6":{
+            "name": "UNIQUE",
+            "pfp": "https://cdn.discordapp.com/attachments/1120808543658975346/1233676156041953300/adae26e38a2f862028a83634911d6c66.webp?ex=662df5f4&is=662ca474&hm=eb1fff7dc0fe2acf4782e29bc7cb326f438f27822500dc6934830742360e3aa2&",
+            "origin": "UwUDwagon",
+            "reason": "UwUdwagon said this because idfk he's retarded",
+            "quote": "https://cdn.discordapp.com/attachments/1120808543658975346/1233675769109155920/Screenshot_3.png?ex=662df597&is=662ca417&hm=39c98cfb9e86dadcf38500b3dd4d3e4c0776faa135a136d0b22ba5c75945ae82&",
+            "rarity": 5,
+            "msg_link": "https://discord.com/channels/1087889803799969814/1091116865373356142/1150478679856656424"
+        },
+        "7":{
+            "name": "THE QUOTE",
+            "pfp": "https://cdn.discordapp.com/attachments/1120808543658975346/1233676156041953300/adae26e38a2f862028a83634911d6c66.webp?ex=662df5f4&is=662ca474&hm=eb1fff7dc0fe2acf4782e29bc7cb326f438f27822500dc6934830742360e3aa2&",
+            "origin": "UwUDwagon",
+            "reason": "UwUdwagon said this because idfk he's retarded",
+            "quote": "https://cdn.discordapp.com/attachments/1120808543658975346/1233675769109155920/Screenshot_3.png?ex=662df597&is=662ca417&hm=39c98cfb9e86dadcf38500b3dd4d3e4c0776faa135a136d0b22ba5c75945ae82&",
+            "rarity": 6,
+            "msg_link": "https://discord.com/channels/1087889803799969814/1091116865373356142/1150478679856656424"
         }
+
 
     }]
 
