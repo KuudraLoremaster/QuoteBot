@@ -7,22 +7,20 @@ asliced = a.toString().slice(0, -3)
 cooldown = parseInt(asliced)
 
 usersj = require("./users.json")
-quotesj = require('./quotes.json')
-raritiesj = require("./rarities.json")
-
 users = usersj.users
-quotes = quotesj.quotes
-rarities = raritiesj.rarities
+
+const quotes = require('./quotes.json').quotes
+const rarities = require("./rarities.json").rarities
 
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('quote-daily')
         .setDescription('get your daily quote'),
         async execute(interaction, client){
-            chosen_quote = quotes[Math.floor(Math.random) * quotes.length]
+            chosen_quote = quotes[Math.floor(Math.random() * quotes.count)]
             quote_embed = new EmbedBuilder()
             .setTitle('You got ' + chosen_quote.name)
-            .setDescription('The next time you can quote is in <t:${cooldown}:R>')
+            .setDescription(`The next time you can quote is in <t:${cooldown}:R>`)
             .setColor(0x18e1ee)
             .setImage(chosen_quote.quote)
             .setThumbnail(chosen_quote.pfp)
@@ -33,8 +31,8 @@ module.exports = {
             })
             .setURL(chosen_quote.msg_link)
             .addFields([{
-                name: rarities[chosen_quote.rarity],
-                value: chosen_quote.bucks + ' quotebucks',
+                name: rarities[chosen_quote.rarity.toString()].name,
+                value: chosen_quote.bucks.toString() + ' quotebucks',
                 inline: false
             },
             {

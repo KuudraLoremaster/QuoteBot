@@ -1,4 +1,6 @@
 {
+    "quotes": {
+        "count": 2,
     "0":{
             "id": 0,
             "name": "Unborn Child",
@@ -22,6 +24,6 @@
             "msg_link": "https://discord.com/channels/1087889803799969814/1091116865373356142/1150478679856656424"
         }
 
-
+    }
 
 }
