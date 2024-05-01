@@ -1,6 +1,5 @@
 {
-    "quotes": {
-        "count": 2,
+    "quotes": [{
     "0":{
             "id": 0,
             "name": "Unborn Child",
@@ -18,12 +17,12 @@
             "pfp": "https://cdn.discordapp.com/attachments/1162056243721031733/1233721641196847236/92ab2b7c3efbb5d470afd9383aed1bf2.webp?ex=662e2050&is=662cced0&hm=e1d2700acf0df38f233ae651aba36c273662b1246917dde0c428167ab55731df&",
             "bucks": 250,
             "origin": "pixelated_face",
-            "reason": "magnus quote.",
+            "reason": "magnus backdoor",
             "quote": "https://cdn.discordapp.com/attachments/1164838382195724388/1230242427374403674/image.png?ex=662dfe4b&is=662caccb&hm=4328c57c830c4bc4a35d715a8298a543944ea8ad7f9c611c7d91ffdc4bed0924&",
             "rarity": 0,
             "msg_link": "https://discord.com/channels/1087889803799969814/1091116865373356142/1150478679856656424"
         }
 
-    }
+    }]
 
 }

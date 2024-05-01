@@ -17,7 +17,8 @@ module.exports = {
         .setName('quote-daily')
         .setDescription('get your daily quote'),
         async execute(interaction, client){
-            chosen_quote = quotes[Math.floor(Math.random() * quotes.count)]
+            num = Math.floor(Math.random() * quotes.length)
+            chosen_quote = quotes[num][num]
             quote_embed = new EmbedBuilder()
             .setTitle('You got ' + chosen_quote.name)
             .setDescription(`The next time you can quote is in <t:${cooldown}:R>`)
