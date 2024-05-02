@@ -12,27 +12,26 @@ users = usersj.users
 const quotes = require('./quotes.json').quotes
 const rarities = require("./rarities.json").rarities
 const q_rarities = require('./quotes_rarities.json').rarities
+const pfps = require('./pfps.json').pfps
 
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('quote-daily')
         .setDescription('get your daily quote'),
         async execute(interaction, client){
-           
-            
-            
             rarity_roll = rollRarity()
             rarity = rarities[rarity_roll]
-
+            
             num = Math.floor(Math.random() * (q_rarities[rarity_roll].length))
-            chosen_quote = quotes[0][num]
+            console.log(num)
+            chosen_quote = quotes[0][q_rarities[rarity_roll][num]]
             
             quote_embed = new EmbedBuilder()
             .setTitle('You got ' + chosen_quote.name)
             .setDescription(`The next time you can quote is <t:${cooldown}:R>`)
             .setColor(rarity.color)
             .setImage(chosen_quote.quote)
-            .setThumbnail(chosen_quote.pfp)
+            .setThumbnail(pfps[chosen_quote.origin])
             .setTimestamp(Date.now())
             .setAuthor({
                 iconURL: interaction.user.displayAvatarURL(),
@@ -56,7 +55,7 @@ module.exports = {
         }
 }
 
-const rarity_mult = [ // rarity_id : weight
+const rarity_mult = [ // rarity_id : weight (please make sure it adds up to 1 if you change any of the numbers)
     {0: 0.649}, // Common
     {1: 0.25}, // Uncommon
     {2: 0.05}, // Rare

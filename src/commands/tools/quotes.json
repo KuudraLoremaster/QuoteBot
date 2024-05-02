@@ -2,77 +2,78 @@
     "quotes": [{
     "0":{
             "name": "Unborn Child",
-            "pfp": "https://cdn.discordapp.com/attachments/1120808543658975346/1233676156041953300/adae26e38a2f862028a83634911d6c66.webp?ex=662df5f4&is=662ca474&hm=eb1fff7dc0fe2acf4782e29bc7cb326f438f27822500dc6934830742360e3aa2&",
-            "origin": "UwUDwagon",
-            "reason": "UwUdwagon said this because idfk he's retarded",
-            "quote": "https://cdn.discordapp.com/attachments/1120808543658975346/1233675769109155920/Screenshot_3.png?ex=662df597&is=662ca417&hm=39c98cfb9e86dadcf38500b3dd4d3e4c0776faa135a136d0b22ba5c75945ae82&",
-            "rarity": 0,
-            "msg_link": "https://discord.com/channels/1087889803799969814/1091116865373356142/1150478679856656424"
-        },
-    "1":{
-            "name": "Fuck me in the asshole",
-            "pfp": "https://cdn.discordapp.com/attachments/1162056243721031733/1233721641196847236/92ab2b7c3efbb5d470afd9383aed1bf2.webp?ex=662e2050&is=662cced0&hm=e1d2700acf0df38f233ae651aba36c273662b1246917dde0c428167ab55731df&",
-            "origin": "pixelated_face",
-            "reason": "magnus quote",
-            "quote": "https://cdn.discordapp.com/attachments/1164838382195724388/1230242427374403674/image.png?ex=662dfe4b&is=662caccb&hm=4328c57c830c4bc4a35d715a8298a543944ea8ad7f9c611c7d91ffdc4bed0924&",
-            "rarity": 0,
-            "msg_link": "https://discord.com/channels/1087889803799969814/1091116865373356142/1150478679856656424"
-        },
-        "2":{
-
-            "name": "UNCOMMON",
-            "pfp": "https://cdn.discordapp.com/attachments/1120808543658975346/1233676156041953300/adae26e38a2f862028a83634911d6c66.webp?ex=662df5f4&is=662ca474&hm=eb1fff7dc0fe2acf4782e29bc7cb326f438f27822500dc6934830742360e3aa2&",
-            "origin": "UwUDwagon",
-            "reason": "UwUdwagon said this because idfk he's retarded",
-            "quote": "https://cdn.discordapp.com/attachments/1120808543658975346/1233675769109155920/Screenshot_3.png?ex=662df597&is=662ca417&hm=39c98cfb9e86dadcf38500b3dd4d3e4c0776faa135a136d0b22ba5c75945ae82&",
-            "rarity": 1,
-            "msg_link": "https://discord.com/channels/1087889803799969814/1091116865373356142/1150478679856656424"
-        },
-        "3":{
-            "name": "RARE",
-            "pfp": "https://cdn.discordapp.com/attachments/1120808543658975346/1233676156041953300/adae26e38a2f862028a83634911d6c66.webp?ex=662df5f4&is=662ca474&hm=eb1fff7dc0fe2acf4782e29bc7cb326f438f27822500dc6934830742360e3aa2&",
-            "origin": "UwUDwagon",
-            "reason": "UwUdwagon said this because idfk he's retarded",
-            "quote": "https://cdn.discordapp.com/attachments/1120808543658975346/1233675769109155920/Screenshot_3.png?ex=662df597&is=662ca417&hm=39c98cfb9e86dadcf38500b3dd4d3e4c0776faa135a136d0b22ba5c75945ae82&",
-            "rarity": 2,
-            "msg_link": "https://discord.com/channels/1087889803799969814/1091116865373356142/1150478679856656424"
-        },
-        "4":{
-            "name": "EPIC",
-            "pfp": "https://cdn.discordapp.com/attachments/1120808543658975346/1233676156041953300/adae26e38a2f862028a83634911d6c66.webp?ex=662df5f4&is=662ca474&hm=eb1fff7dc0fe2acf4782e29bc7cb326f438f27822500dc6934830742360e3aa2&",
-            "origin": "UwUDwagon",
-            "reason": "UwUdwagon said this because idfk he's retarded",
-            "quote": "https://cdn.discordapp.com/attachments/1120808543658975346/1233675769109155920/Screenshot_3.png?ex=662df597&is=662ca417&hm=39c98cfb9e86dadcf38500b3dd4d3e4c0776faa135a136d0b22ba5c75945ae82&",
-            "rarity": 3,
-            "msg_link": "https://discord.com/channels/1087889803799969814/1091116865373356142/1150478679856656424"
-        },
-        "5":{
-            "name": "LEGENDARY",
-            "pfp": "https://cdn.discordapp.com/attachments/1120808543658975346/1233676156041953300/adae26e38a2f862028a83634911d6c66.webp?ex=662df5f4&is=662ca474&hm=eb1fff7dc0fe2acf4782e29bc7cb326f438f27822500dc6934830742360e3aa2&",
-            "origin": "UwUDwagon",
-            "reason": "UwUdwagon said this because idfk he's retarded",
-            "quote": "https://cdn.discordapp.com/attachments/1120808543658975346/1233675769109155920/Screenshot_3.png?ex=662df597&is=662ca417&hm=39c98cfb9e86dadcf38500b3dd4d3e4c0776faa135a136d0b22ba5c75945ae82&",
-            "rarity": 4,
-            "msg_link": "https://discord.com/channels/1087889803799969814/1091116865373356142/1150478679856656424"
-        },
-        "6":{
-            "name": "UNIQUE",
-            "pfp": "https://cdn.discordapp.com/attachments/1120808543658975346/1233676156041953300/adae26e38a2f862028a83634911d6c66.webp?ex=662df5f4&is=662ca474&hm=eb1fff7dc0fe2acf4782e29bc7cb326f438f27822500dc6934830742360e3aa2&",
-            "origin": "UwUDwagon",
+            "origin": "uwudwagonl",
             "reason": "UwUdwagon said this because idfk he's retarded",
             "quote": "https://cdn.discordapp.com/attachments/1120808543658975346/1233675769109155920/Screenshot_3.png?ex=662df597&is=662ca417&hm=39c98cfb9e86dadcf38500b3dd4d3e4c0776faa135a136d0b22ba5c75945ae82&",
             "rarity": 5,
             "msg_link": "https://discord.com/channels/1087889803799969814/1091116865373356142/1150478679856656424"
         },
-        "7":{
-            "name": "THE QUOTE",
-            "pfp": "https://cdn.discordapp.com/attachments/1120808543658975346/1233676156041953300/adae26e38a2f862028a83634911d6c66.webp?ex=662df5f4&is=662ca474&hm=eb1fff7dc0fe2acf4782e29bc7cb326f438f27822500dc6934830742360e3aa2&",
-            "origin": "UwUDwagon",
-            "reason": "UwUdwagon said this because idfk he's retarded",
-            "quote": "https://cdn.discordapp.com/attachments/1120808543658975346/1233675769109155920/Screenshot_3.png?ex=662df597&is=662ca417&hm=39c98cfb9e86dadcf38500b3dd4d3e4c0776faa135a136d0b22ba5c75945ae82&",
-            "rarity": 6,
+    "1":{
+            "name": "Fuck me in the asshole",
+            "origin": "pixelated_face",
+            "reason": "magnus quote",
+            "quote": "https://cdn.discordapp.com/attachments/1164838382195724388/1230242427374403674/image.png?ex=662dfe4b&is=662caccb&hm=4328c57c830c4bc4a35d715a8298a543944ea8ad7f9c611c7d91ffdc4bed0924&",
+            "rarity": 1,
             "msg_link": "https://discord.com/channels/1087889803799969814/1091116865373356142/1150478679856656424"
-        }
+        },
+    "2":{
+        "name": "Triple Cum",
+        "origin":"uwudwagonl",
+        "reason": "dwagon is a degenerate",
+        "quote":"https://media.discordapp.net/attachments/1164838382195724388/1234257499327037521/image.png?ex=6634b09f&is=66335f1f&hm=48ba64da16b13854fa9c95f0da223eaf92f1f64f57a75a05ae65629e97a074b7&=&format=webp&quality=lossless",
+        "rarity": 2,
+        "msg_link": "https://discord.com/channels/1162056243125432391/1164838382195724388/1234257543828603001"
+    },
+    "3":{
+        "name": "rainworld noodlefly family",
+        "origin":"pixelated_face",
+        "reason": "food",
+        "quote": "https://media.discordapp.net/attachments/1164838382195724388/1230089429205385256/image.png?ex=6634b00d&is=66335e8d&hm=2a24d6808b465171f67319f63865942e288c8c5bf2d0cbc45cc166ae1ffa7bba&=&format=webp&quality=lossless&width=1025&height=132",
+        "rarity": 2,
+        "msg_link": "https://discord.com/channels/1162056243125432391/1164838382195724388/1230089429251788844"
+    },
+    "4":{
+        "name": "igobylotsofnames necrophilia",
+        "origin": "igobylotsofnames",
+        "reason": "i think he wanted to fuck a corpse that day",
+        "quote": "https://media.discordapp.net/attachments/1164838382195724388/1220946411810586694/image.png?ex=66346274&is=663310f4&hm=f8c35f72a438235f0ef8cd916e189ac47acdfc1965131962f53c2e229b270906&=&format=webp&quality=lossless",
+        "rarity": 4,
+        "msg_link": "https://discord.com/channels/1162056243125432391/1164838382195724388/1220946412087545936"
+    },
+    "5":{
+        "name": "porn archive",
+        "origin": "uwudwagonl",
+        "reason": "he's horny as shit",
+        "quote": "https://media.discordapp.net/attachments/1164838382195724388/1213176287682887730/image.png?ex=66347636&is=663324b6&hm=c979f75ebb8a9a2eb3d64ae3e43dcb871d0ba805fb22489f1a8b279d93bbe050&=&format=webp&quality=lossless&width=836&height=245",
+        "rarity": 3,
+        "msg_link": "https://discord.com/channels/1162056243125432391/1164838382195724388/1213176287955386368"
+    },
+    "6":{
+        "name": "rawhav0kk grooming",
+        "origin": "rawhav0kk",
+        "reason": "gotta pay the bills",
+        "quote": "https://media.discordapp.net/attachments/1164838382195724388/1207625513514831882/image.png?ex=6634b3e7&is=66336267&hm=d1964e10ca0df53397694b0da20bac89690ce7bbf48bc11404b344238bca2597&=&format=webp&quality=lossless",
+        "rarity": 4,
+        "msg_link": "https://discord.com/channels/1162056243125432391/1164838382195724388/1207625513758228510"
+    },
+    "7": {
+        "name": "women",
+        "origin": "kuudraloremaster",
+        "reason": "3-2",
+        "quote":"https://media.discordapp.net/attachments/1164838382195724388/1204752836164853830/Screenshot_20240207_123728.jpg?ex=6634cc83&is=66337b03&hm=eed1201ade203e5895beab94633d0f30f00c76eb199eafd61559e07b7e10849a&=&format=webp&width=836&height=116",
+        "rarity": 6,
+        "msg_link": "https://discord.com/channels/1162056243125432391/1164838382195724388/1204752836362248202"  
+    },
+    "8": {
+        "name": "scalie pet",
+        "origin":"pixelated_face",
+        "reason": ":3",
+        "quote": "https://media.discordapp.net/attachments/1164838382195724388/1205088728226336838/image.png?ex=6634b3d6&is=66336256&hm=e606a6e6351ca4229bfa340341f645ce8a2334bc4de20cdeef78b1aa97e4a695&=&format=webp&quality=lossless",
+        "rarity": 0,
+        "msg_link": "https://discord.com/channels/1162056243125432391/1164838382195724388/1205088728444436500"
+
+    }
+
 
 
     }]
