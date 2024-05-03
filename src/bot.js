@@ -11,7 +11,8 @@ client.commandArray = [];
 
 const force_reload_rarity = false
 
-if(quotes.length != rarity_json.count){
+if(Object.keys(quotes[0]).length != rarity_json.count){
+  console.log('Reloading Quote Rarities')
   reload_rarity()
 }
 
@@ -19,26 +20,26 @@ if(quotes.length != rarity_json.count){
 function reload_rarity(){
   var r = {
     "rarities":{
-      "0": {},
-      "1": {},
-      "2": {},
-      "3": {},
-      "4": {},
-      "5": {},
-      "6": {}
+      "0": [],
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": []
     },
     "count": 0
   };
   const q = quotes[0]
-  r.count = quotes.length
-  for(let i = 0; i < quotes.length; i++){
-    r[q[i.toString()].rarity] = i.toString()
+  r.count = Object.keys(quotes[0]).length
+  for(let i = 0; i < r.count; i++){
+    
+    r.rarities[q[i.toString()].rarity.toString()].push(i.toString())
+    
   }
 
   var json = JSON.stringify(r)
-  console.log(r)
-  console.log(json)
-  fs.writeFile('./commands/tools/quotes_rarities.json', json, 'utf8')
+  fs.writeFile('./src/commands/tools/quotes_rarities.json', json, (err) => {if(err){throw err}})
 }
 
 const functionFolders = fs.readdirSync('./src/functions')

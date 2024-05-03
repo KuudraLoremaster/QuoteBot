@@ -12,7 +12,9 @@ module.exports = {
             }
             try {
                 await command.execute(interaction, client);
-                console.log(`${interaction.user.tag} ran command ${interaction}`)
+                let d = new Date()
+                let date = `${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}`
+                console.log(`[${date}] (${interaction.user.tag}) ran command ${interaction}`)
                 // console.log(typeof users)
             } catch (error) {
                 console.error(error)

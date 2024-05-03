@@ -23,7 +23,6 @@ module.exports = {
             rarity = rarities[rarity_roll]
             
             num = Math.floor(Math.random() * (q_rarities[rarity_roll].length))
-            console.log(num)
             chosen_quote = quotes[0][q_rarities[rarity_roll][num]]
             
             quote_embed = new EmbedBuilder()
