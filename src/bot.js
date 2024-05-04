@@ -1,11 +1,13 @@
 require('dotenv').config()
 const { token } = process.env;
-const { Client, Collection, GatewayIntentBits } = require('discord.js');
+const { Client, Collection, GatewayIntentBits, ActivityType } = require('discord.js');
 const fs = require('fs');
-var rarity_json = require('./commands/tools/quotes_rarities.json')
+var rarity_json = require('./commands/tools/quotes_rarities.json');
+const { OnUncaughtException } = require('./util/GlobalErrorHandler');
 const quotes = require('./commands/tools/quotes.json').quotes
 
 const client = new Client({ intents: GatewayIntentBits.Guilds });
+
 client.commands = new Collection()
 client.commandArray = [];
 
@@ -47,6 +49,16 @@ for (const folder of functionFolders) {
   const functionFiles = fs.readdirSync(`./src/functions/${folder}`).filter(file => file.endsWith('.js'))
   for (const file of functionFiles) require(`./functions/${folder}/${file}`)(client);
 }
+
+
+['SIGINT', 'SIGTERM', 'SIGQUIT'].forEach(signal => process.on(signal, () =>{
+  client.destroy()
+  process.exit(0)
+}))
+
+process.on("uncaughtException", (err) =>{
+  OnUncaughtException(err)
+})
 
 client.handleEvents();
 client.handleCommands();

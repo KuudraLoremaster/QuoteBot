@@ -2,6 +2,7 @@ const { REST } = require('discord.js')
 const { Routes } = require('discord-api-types/v9')
 
 const fs = require('fs');
+const { log } = require('../../util/logger');
 
 module.exports = (client) => {
     client.handleCommands = async() => {
@@ -13,7 +14,7 @@ module.exports = (client) => {
                 const command = require(`../../commands/${folder}/${file}`);
                 commands.set(command.data.name, command);
                 commandArray.push(command.data.toJSON());
-                console.log(`Command ${command.data.name} has been passed through the handler`)
+                log(`Command ${command.data.name} has been passed through the handler`)
             }
         }
 
@@ -45,7 +46,7 @@ const rest = new REST().setToken(process.env.token);
 // and deploy your commands!
 (async () => {
 	try {
-		console.log(`Started refreshing application (/) commands.`);
+		log(`Started refreshing application (/) commands.`);
 
 		// The put method is used to fully refresh all commands in the guild with the current set
 		const data = await rest.put(
@@ -53,7 +54,7 @@ const rest = new REST().setToken(process.env.token);
 			{ body: client.commandArray },
 		);
 
-		console.log(`Successfully reloaded application (/) commands.`);
+		log(`Successfully reloaded application (/) commands.`);
 	} catch (error) {
 		// And of course, make sure you catch and log any errors!
 		console.error(error);
