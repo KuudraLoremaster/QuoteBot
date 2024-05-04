@@ -1,3 +1,5 @@
+const {log} = require('../../util/logger')
+
 module.exports = {
     name: 'interactionCreate',
     async execute(interaction, client) {
@@ -12,7 +14,8 @@ module.exports = {
             }
             try {
                 await command.execute(interaction, client);
-                console.log(`${interaction.user.tag} ran command ${interaction}`)
+                
+                log(`(${interaction.user.tag}) ran command ${interaction}`)
                 // console.log(typeof users)
             } catch (error) {
                 console.error(error)
