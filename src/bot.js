@@ -2,9 +2,9 @@ require('dotenv').config()
 const { token } = process.env;
 const { Client, Collection, GatewayIntentBits, ActivityType } = require('discord.js');
 const fs = require('fs');
-var rarity_json = require('./commands/tools/quotes_rarities.json');
+var rarity_json = require('./json/quotes_rarities.json');
 const { OnUncaughtException } = require('./util/GlobalErrorHandler');
-const quotes = require('./commands/tools/quotes.json').quotes
+const quotes = require('./json/quotes.json').quotes
 
 const client = new Client({ intents: GatewayIntentBits.Guilds });
 
