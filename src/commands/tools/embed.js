@@ -6,13 +6,12 @@ const a = (Date.now() + (24*60*60*1000))
 asliced = a.toString().slice(0, -3)
 cooldown = parseInt(asliced)
 
-usersj = require("./users.json")
-users = usersj.users
-
-const quotes = require('./quotes.json').quotes
-const rarities = require("./rarities.json").rarities
-const q_rarities = require('./quotes_rarities.json').rarities
-const pfps = require('./pfps.json').pfps
+const {createQuoteEmbed} = require('../../util/quoteEmbed')
+const quotes = require('../../json/quotes.json').quotes
+const rarities = require("../../json/rarities.json").rarities
+const q_rarities = require('../../json/quotes_rarities.json').rarities
+const pfps = require('../../json/pfps.json').pfps
+const rarity_mult = require('../../json/globals.json').rarity_weight
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -23,30 +22,7 @@ module.exports = {
             rarity = rarities[rarity_roll]
             
             num = Math.floor(Math.random() * (q_rarities[rarity_roll].length))
-            chosen_quote = quotes[0][q_rarities[rarity_roll][num]]
-            
-            quote_embed = new EmbedBuilder()
-            .setTitle('You got ' + chosen_quote.name)
-            .setDescription(`The next time you can quote is <t:${cooldown}:R>`)
-            .setColor(rarity.color)
-            .setImage(chosen_quote.quote)
-            .setThumbnail(pfps[chosen_quote.origin])
-            .setTimestamp(Date.now())
-            .setAuthor({
-                iconURL: interaction.user.displayAvatarURL(),
-                name: interaction.user.tag
-            })
-            .setURL(chosen_quote.msg_link)
-            .addFields([{
-                name: rarity.name,
-                value: rarity.bucks.toString() + ' quotebucks',
-                inline: false
-            },
-            {
-                name: 'Quote by '+ chosen_quote.origin,
-                value: chosen_quote.reason,
-                inline: false    
-            }]);
+            quote_embed = createQuoteEmbed(q_rarities[rarity_roll][num], cooldown, interaction)
 
             await interaction.reply({
                 embeds: [quote_embed]
@@ -54,15 +30,7 @@ module.exports = {
         }
 }
 
-const rarity_mult = [ // rarity_id : weight (please make sure it adds up to 1 if you change any of the numbers)
-    {0: 0.649}, // Common
-    {1: 0.25}, // Uncommon
-    {2: 0.05}, // Rare
-    {3: 0.035}, // Epic
-    {4: 0.01}, // Legendary
-    {5: 0.005}, // Unique
-    {6: 0.00001} //The Quote
-]
+
 
 function rollRarity(){
     
