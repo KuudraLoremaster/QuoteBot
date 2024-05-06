@@ -2,13 +2,14 @@
   <img src="https://github.com/KuudraLoremaster/QuoteBot/blob/main/assets/gh_logo.png" alt="QuoteBot" width="256" height="256">
   <br>
   QuoteBot<br>
-  <p align="center">
-  <a href="https://discord.gg/v4XPQEYUwM"><img src="https://img.shields.io/discord/1237087530541645966?logo=discord&label=Discord&labelColor=3649A5&color=5E6DFF"></a>
-  </p>
+ 
 </h1>
 
 <h3 align="center">A blazingly weird discord bot</h2>
-
+ <p align="center">
+  <a href="https://discord.gg/v4XPQEYUwM"><img src="https://img.shields.io/discord/1237087530541645966?logo=discord&label=Discord&labelColor=3649A5&color=5E6DFF"></a>
+  </p>
+  
 # Features
 A fully fledged gacha system (roll for weird quotes!) <br>
 Upgrades for your luck and money! <br>
