@@ -25,8 +25,8 @@
             "name": "pi",
             "sprite": "https://media.discordapp.net/attachments/1236736594598428713/1236736662499754054/pi_upgrade.png?ex=66391845&is=6637c6c5&hm=de85bd0a5fc0ce691a958e04c8cf4d677f10452e3d78adb757f82b8fada83f17&=&format=webp&quality=lossless",
             "description": "3.14159265359",
-            "luck_mult": 3.14,
-            "money_mult": 3.14
+            "luck_mult": 0.314,
+            "money_mult": 0.314
         }
     }
 ]

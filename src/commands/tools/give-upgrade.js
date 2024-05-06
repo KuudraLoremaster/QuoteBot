@@ -2,7 +2,6 @@ const { SlashCommandBuilder, EmbedBuilder, Embed, quote, UserSelectMenuBuilder, 
 const { execute, name } = require('../../events/client/ready')
 const { createUpgradeEmbed } = require('../../util/quoteEmbed')
 
-const mult = require('../../json/luck_mult_temp.json')
 
 const fs = require('fs');
 const upgrades = require('../../json/upgrades.json')[0]
@@ -62,15 +61,6 @@ module.exports = {
                 await interaction.followUp({content: `Gained ${upgrades[id].luck_mult+1}x Luck and ${upgrades[id].money_mult+1}x Money!`, ephemeral: true})
                 await interaction.deleteReply()
 
-                let luck = mult.luck + upgrades[id].luck_mult
-                let money = mult.money + upgrades[id].money_mult
-                r = {
-                    "luck": luck,
-                    "money": money
-                }
-                var json = JSON.stringify(r)
-            
-                fs.writeFile('./src/json/luck_mult_temp.json', json, (err) => {if(err){throw err}})
 
             }   
         }

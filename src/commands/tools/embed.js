@@ -13,7 +13,7 @@ const rarities = require("../../json/rarities.json").rarities
 const q_rarities = require('../../json/quotes_rarities.json').rarities
 const pfps = require('../../json/pfps.json').pfps
 const rarity_mult = require('../../json/globals.json').rarity_weight
-const mult = require('../../json/luck_mult_temp.json')
+
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -25,15 +25,7 @@ module.exports = {
             rarity = rarities[rarity_roll]
             
             num = Math.floor(Math.random() * (q_rarities[rarity_roll].length))
-            quote_embed = createQuoteEmbed(q_rarities[rarity_roll][num], cooldown, interaction, mult.money)
-            
-            r = {
-                "luck": 1,
-                "money": 1
-            }
-            var json = JSON.stringify(r)
-        
-            fs.writeFile('./src/json/luck_mult_temp.json', json, (err) => {if(err){throw err}})
+            quote_embed = createQuoteEmbed(q_rarities[rarity_roll][num], cooldown, interaction)
             
             await interaction.reply({
                 embeds: [quote_embed]
@@ -46,8 +38,7 @@ module.exports = {
 
 function rollRarity(){
     
-    let rand = Math.random() * mult.luck
-    log(rand)
+    let rand = Math.random()
     for (let i = 0; i < rarity_mult.length; i++) {
         const rarity = rarity_mult[i][i]
         if(rand <= rarity){

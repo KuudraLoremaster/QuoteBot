@@ -4,7 +4,7 @@ const pfps = require('../json/pfps.json').pfps
 const j_rarity = require('../json/rarities.json').rarities
 const upgrades = require('../json/upgrades.json')[0]
 
-function createQuoteEmbed(id, cooldown, interaction, money_mult){
+function createQuoteEmbed(id, cooldown, interaction){
 
     const chosen_quote = quotes[0][id]
     const rarity = j_rarity[chosen_quote.rarity]
@@ -23,7 +23,7 @@ function createQuoteEmbed(id, cooldown, interaction, money_mult){
             .setURL(chosen_quote.msg_link)
             .addFields([{
                 name: rarity.name + ` (${rarity.chance}% Chance)`,
-                value: Math.round(rarity.bucks * money_mult).toString() + ' Quotebucks',
+                value: Math.round(rarity.bucks).toString() + ' Quotebucks',
                 inline: false
             },
             {
