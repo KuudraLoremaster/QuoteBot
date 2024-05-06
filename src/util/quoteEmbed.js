@@ -2,6 +2,7 @@ const { EmbedBuilder } = require("@discordjs/builders");
 const quotes = require('../json/quotes.json').quotes
 const pfps = require('../json/pfps.json').pfps
 const j_rarity = require('../json/rarities.json').rarities
+const upgrades = require('../json/upgrades.json')[0]
 
 function createQuoteEmbed(id, cooldown, interaction){
 
@@ -21,8 +22,8 @@ function createQuoteEmbed(id, cooldown, interaction){
             })
             .setURL(chosen_quote.msg_link)
             .addFields([{
-                name: rarity.name,
-                value: rarity.bucks.toString() + ' quotebucks',
+                name: rarity.name + ` (${rarity.chance}% Chance)`,
+                value: Math.round(rarity.bucks).toString() + ' Quotebucks',
                 inline: false
             },
             {
@@ -33,4 +34,14 @@ function createQuoteEmbed(id, cooldown, interaction){
     return quote_embed
 }
 
-module.exports = {createQuoteEmbed}
+function createUpgradeEmbed(id){
+    upgrade_embed = new EmbedBuilder()
+            .setTitle(upgrades[id].name)
+            .setDescription(upgrades[id].description)
+            .setColor([0,0,0])
+            .setThumbnail(upgrades[id].sprite)
+    return upgrade_embed
+}
+
+
+module.exports = {createQuoteEmbed, createUpgradeEmbed}

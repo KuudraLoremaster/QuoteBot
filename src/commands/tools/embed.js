@@ -7,28 +7,32 @@ asliced = a.toString().slice(0, -3)
 cooldown = parseInt(asliced)
 
 const {createQuoteEmbed} = require('../../util/quoteEmbed')
+const { log } = require('../../util/logger')
 const quotes = require('../../json/quotes.json').quotes
 const rarities = require("../../json/rarities.json").rarities
 const q_rarities = require('../../json/quotes_rarities.json').rarities
 const pfps = require('../../json/pfps.json').pfps
 const rarity_mult = require('../../json/globals.json').rarity_weight
 
+
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('quote-daily')
         .setDescription('get your daily quote'),
         async execute(interaction, client){
+
             rarity_roll = rollRarity()
             rarity = rarities[rarity_roll]
             
             num = Math.floor(Math.random() * (q_rarities[rarity_roll].length))
             quote_embed = createQuoteEmbed(q_rarities[rarity_roll][num], cooldown, interaction)
-
+            
             await interaction.reply({
                 embeds: [quote_embed]
             })
         }
 }
+
 
 
 
@@ -46,3 +50,4 @@ function rollRarity(){
 
     return 0;
 }
+

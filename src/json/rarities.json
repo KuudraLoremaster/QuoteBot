@@ -4,37 +4,44 @@
         "0":{
             "bucks": 10,
             "color": [255, 255, 255],
-            "name": "Common"
+            "name": "Common",
+            "chance": "50"
         },
         "1":{
             "bucks": 50,
             "color": [0, 255, 0],
-            "name": "Uncommon"
+            "name": "Uncommon",
+            "chance": "25"
         },
         "2":{
             "bucks": 100,
             "color": [33, 33, 194],
-            "name": "Rare"
+            "name": "Rare",
+            "chance": "15"
         },
         "3":{
             "bucks": 500,
             "color": [99, 45, 145],
-            "name": "Epic"
+            "name": "Epic",
+            "chance": "8.4"
         },
         "4":{
             "bucks": 1000,
             "color": [255, 255, 0],
-            "name": "Legendary"
+            "name": "Legendary",
+            "chance": "1%"
         },
         "5":{
             "bucks": 5000,
             "color": [255, 50, 255],
-            "name": "Unique"
+            "name": "Unique",
+            "chance": "0.5"
         },
         "6":{
             "bucks": 10000,
             "color": [0, 255, 255],
-            "name": "wtf"
+            "name": "wtf",
+            "chance": "0.1"
         }
 
     }
