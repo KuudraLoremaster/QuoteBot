@@ -21,7 +21,7 @@ module.exports = {
     data: new SlashCommandBuilder()
     .setName('quote-daily')
     .setDescription('get your daily quote'),
-    async execute(interaction, client
+    async execute(interaction, client){
             
             rarity_roll = rollRarity()
             rarity = rarities[rarity_roll]
