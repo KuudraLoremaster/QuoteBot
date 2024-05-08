@@ -4,6 +4,7 @@ const { createUpgradeEmbed } = require('../../util/quoteEmbed')
 
 
 const fs = require('fs');
+const { addUpgrade } = require('../../util/databaseUtil');
 const upgrades = require('../../json/upgrades.json')[0]
 const admins = require('../../json/globals.json').admins
 
@@ -48,7 +49,7 @@ module.exports = {
 
             const user_filter = i => i.user.id === interaction.user.id
             
-            upgrade_embed = createUpgradeEmbed(id)
+            upgrade_embed = addUpgrade(id, interaction.user.id)
 
             response = await interaction.reply({
                 embeds: [upgrade_embed],

@@ -8,15 +8,14 @@ cooldown = parseInt(asliced)
 
 const {createQuoteEmbed} = require('../../util/quoteEmbed')
 const { log } = require('../../util/logger')
+const { addQuote } = require('../../util/databaseUtil')
 const quotes = require('../../json/quotes.json').quotes
 const rarities = require("../../json/rarities.json").rarities
 const q_rarities = require('../../json/quotes_rarities.json').rarities
 const pfps = require('../../json/pfps.json').pfps
 const rarity_mult = require('../../json/globals.json').rarity_weight
-const Database = require('better-sqlite3');
-const db = new Database('users.db', { verbose: console.log });
-query = `CREATE TABLE users(id INTEGER PRIMARY KEY, userID, quotes, quotebucks, tag)` 
-// db.exec(query)
+
+
 module.exports = {
     data: new SlashCommandBuilder()
     .setName('quote-daily')
@@ -27,11 +26,14 @@ module.exports = {
             rarity = rarities[rarity_roll]
             
             num = Math.floor(Math.random() * (q_rarities[rarity_roll].length))
-            quote_embed = createQuoteEmbed(q_rarities[rarity_roll][num], cooldown, interaction)
-            
+            quote_embed = addQuote(q_rarities[rarity_roll][num], cooldown, interaction)
+            if(quote_embed == -1){
+                await interaction.reply({content:"You already rolled a quote today.", ephemeral: true})
+            }else{
             await interaction.reply({
                 embeds: [quote_embed]
             })
+            }
         }
 }
 
