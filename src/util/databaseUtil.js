@@ -7,6 +7,7 @@ const j_rarity = require('../json/rarities.json').rarities
 const fs = require('fs');
 const { log } = require('./logger');
 const { createQuoteEmbed, createUpgradeEmbed } = require('./quoteEmbed');
+const admins = require('../json/globals.json').admins
 
 new_query = 'CREATE TABLE IF NOT EXISTS users(id INTEGER PRIMARY KEY, userID, quotes, quotebucks,tag, daily INTEGER DEFAULT 0, upgrades, luck_mult INTEGER DEFAULT 1, money_mult INTEGER DEFAULT 1)'
 
@@ -17,15 +18,26 @@ function createDB(){
    
 }
 
+function isUserAdmin(id){
+    for(let i = 0; i < admins.length; i++){
+        if(admins[i] == id){
+            return true
+        }
+        
+    }
+
+    return false
+}
+
 function addQuote(id, cooldown, interaction, ignore_daily=false){
     const chosen_quote = quotes[0][id]
     const rarity = j_rarity[chosen_quote.rarity]
-    if(getDaily(interaction.user.id) == 1 && ignore_daily == false){
+    if((getDaily(interaction.user.id) == 1 && ignore_daily == false) && !isUserAdmin(interaction.user.id.toString())){
         return -1
     }
-    if(ignore_daily == false){
-        useDaily(interaction.user.id)
-    }
+    
+    useDaily(interaction.user.id)
+    
 
     sql = `SELECT * FROM users WHERE tag='${interaction.user.tag}'`
             const userArray = db.prepare(sql).all();
@@ -99,9 +111,6 @@ function addQuote(id, cooldown, interaction, ignore_daily=false){
 function addUpgrade(upgrade_id, user_id){
     upgrade_id = upgrade_id.toString()
     let x = db.prepare(`SELECT upgrades FROM users WHERE userID='${user_id}'`).get().upgrades
-    if(x.toString() == '[object Object]'){
-        x = null
-    }
     if(x == null){
         db.prepare(`UPDATE users SET upgrades='{"${upgrade_id}":1}' WHERE userID='${user_id}'`).run()
         
@@ -110,6 +119,10 @@ function addUpgrade(upgrade_id, user_id){
         let upgrades = JSON.parse(x)
         if (upgrades[upgrade_id] != null){
             upgrades[upgrade_id] += 1 
+            console.log(upgrades)
+            db.prepare(`UPDATE users SET upgrades='${JSON.stringify(upgrades)}' WHERE userID='${user_id}'`).run()
+        }else{
+            upgrades[upgrade_id] = 1
             console.log(upgrades)
             db.prepare(`UPDATE users SET upgrades='${JSON.stringify(upgrades)}' WHERE userID='${user_id}'`).run()
         }
@@ -159,5 +172,16 @@ function getDB(){
     return db
 }
 
+function getQuoteID(name){
+    for(let i=0; i < Object.keys(quotes[0]).length; i++){
+        if(name == quotes[0][i].name){
+            return i
+        }
 
-module.exports = {createDB, addUpgrade, useUpgrade, getDaily, getLuckMult, getMoneyMult, getDB, addQuote, resetDaily}
+
+    }
+    return 8 // failsafe
+}
+
+
+module.exports = {createDB, addUpgrade, useUpgrade, getDaily, getLuckMult, getMoneyMult, getDB, addQuote, resetDaily, getQuoteID}
