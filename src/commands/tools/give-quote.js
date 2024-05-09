@@ -10,6 +10,7 @@ cooldown = parseInt(asliced)
 const quotes = require('../../json/quotes.json').quotes
 
 const {createQuoteEmbed} = require('../../util/quoteEmbed')
+const { addQuote } = require('../../util/databaseUtil')
 const admins = require('../../json/globals.json').admins
 const count = require('../../json/quotes_rarities.json').count
 
@@ -43,7 +44,8 @@ module.exports = {
 
             chosen_quote = quotes[0][id]
             
-            quote_embed = createQuoteEmbed(id, cooldown, interaction)
+            quote_embed = addQuote(id, cooldown, interaction, true)
+
 
             await interaction.reply({
                 embeds: [quote_embed]

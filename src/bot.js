@@ -4,7 +4,11 @@ const { Client, Collection, GatewayIntentBits, ActivityType } = require('discord
 const fs = require('fs');
 var rarity_json = require('./json/quotes_rarities.json');
 const { OnUncaughtException } = require('./util/GlobalErrorHandler');
+const { resetDaily } = require('./util/databaseUtil');
 const quotes = require('./json/quotes.json').quotes
+const { log } = require('./util/logger');
+
+var CronJob = require('node-cron')
 
 const client = new Client({ intents: GatewayIntentBits.Guilds });
 
@@ -58,6 +62,12 @@ for (const folder of functionFolders) {
 
 process.on("uncaughtException", (err) =>{
   OnUncaughtException(err)
+})
+
+CronJob.schedule('00 00 00 * * *', () => {
+    log("Resetting Daily")
+    resetDaily()
+    
 })
 
 client.handleEvents();
