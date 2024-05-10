@@ -15,6 +15,7 @@ const admins = require('../../json/globals.json').admins
 const count = require('../../json/quotes_rarities.json').count
 
 module.exports = {
+    cooldown: 5,
     data: new SlashCommandBuilder()
         .setName('give-quote')
         .setDescription('free quotes!!! (real)')

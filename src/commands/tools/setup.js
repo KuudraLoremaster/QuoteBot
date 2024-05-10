@@ -19,6 +19,7 @@ console.log(users)
 
 
 module.exports = {
+    cooldown: 60,
     data: new SlashCommandBuilder()
     .setName('setup')
     .setDescription('refresh commands (has to be used once)')

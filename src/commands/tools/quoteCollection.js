@@ -25,6 +25,7 @@ var selected_quote = 0
 var view_mode = false
 var unsorted_quotes = []
 module.exports = {
+    cooldown: 5,
     data: new SlashCommandBuilder()
     .setName('quote-collection')
     .setDescription('view your collection of quotes')

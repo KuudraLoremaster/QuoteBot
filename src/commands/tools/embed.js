@@ -8,7 +8,7 @@ cooldown = parseInt(asliced)
 
 const {createQuoteEmbed, createUpgradeEmbed} = require('../../util/quoteEmbed')
 const { log } = require('../../util/logger')
-const { addQuote, addUpgrade } = require('../../util/databaseUtil')
+const { addQuote, addUpgrade, getLuckMult } = require('../../util/databaseUtil')
 const quotes = require('../../json/quotes.json').quotes
 const rarities = require("../../json/rarities.json").rarities
 const q_rarities = require('../../json/quotes_rarities.json').rarities
@@ -19,15 +19,16 @@ const upgrade_mult = globals.upgrades_weight
 
 
 module.exports = {
+    cooldown: 5,
     data: new SlashCommandBuilder()
     .setName('quote-daily')
     .setDescription('get your daily quote'),
     async execute(interaction, client){
             
-            rarity_roll = rollRarity()
+            rarity_roll = rollRarity(getLuckMult(interaction.user.id))
             rarity = rarities[rarity_roll]
             
-            upgrade_rarity = rollUpgrade()
+            upgrade_rarity = rollUpgrade(getLuckMult(interaction.user.id))
             num = Math.floor(Math.random() * (q_rarities[rarity_roll].length))
             quote_embed = addQuote(q_rarities[rarity_roll][num], cooldown, interaction)
             upgrade_embed = null
@@ -53,11 +54,11 @@ module.exports = {
 
 
 
-function rollRarity(){
-    
-    let rand = Math.random()
+function rollRarity(luck_mult){
+    let rand = Math.random() / luck_mult 
     for (let i = 0; i < rarity_mult.length; i++) {
-        const rarity = rarity_mult[i][i]
+        const rarity = rarity_mult[i][i] 
+        console.log(rand)
         if(rand <= rarity){
             return i;
         }
@@ -68,12 +69,11 @@ function rollRarity(){
     return 0;
 }
 
-function rollUpgrade(){
-    let rand = Math.random()
+function rollUpgrade(luck_mult){
+    let rand = Math.random() 
     for(let i = 0; i < upgrade_mult.length; i++){
         const rarity = upgrade_mult[i][i]
-        console.log(rarity)
-        if(rand <= rarity){
+        if(rand <= rarity * luck_mult){
             return i-1;
         }
         rand -= rarity;
