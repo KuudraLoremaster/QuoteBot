@@ -33,6 +33,8 @@ module.exports = {
     .addStringOption(option => option.setName('upgrade').setDescription('name of the upgrade').setChoices(...upgrade_options).setRequired(true))
     .addIntegerOption(option => option.setName('amount').setDescription('amount of upgrades to use').setRequired(false).setMinValue(1).setMaxValue(9999)),
     async execute(interaction, client){
+        await interaction.reply({content: `Coming Soon!`, ephemeral: true})
+        return
         user = interaction.user
         amount = interaction.options.getInteger('amount')
         upgrade = interaction.options.getString('upgrade')

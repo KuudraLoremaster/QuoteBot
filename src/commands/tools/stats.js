@@ -4,7 +4,7 @@ const { createUpgradeEmbed } = require('../../util/quoteEmbed')
 
 
 const fs = require('fs');
-const { addUpgrade, getStats, getLuckMult } = require('../../util/databaseUtil');
+const { addUpgrade, getStats, getLuckMult, getStreak } = require('../../util/databaseUtil');
 const upgrades = require('../../json/upgrades.json')[0]
 const admins = require('../../json/globals.json').admins
 
@@ -24,7 +24,9 @@ module.exports = {
             stats_embed = new EmbedBuilder()
             .setTitle(`${user.tag}'s Stats`)
             .setThumbnail(user.displayAvatarURL())
+            .setColor([23,20,30])
             .addFields({name: 'Quote Dailies', value: stats.q_daily.toString()},
+                        {name: 'Streak', value: stats.streak.toString()},
                         {name: 'Luck Multiplier', value: stats.luck_mult.toString()},
                         {name: 'Money Multiplier', value: stats.money_mult.toString()})
 

@@ -55,14 +55,15 @@ module.exports = {
 
 
 function rollRarity(luck_mult){
-    let rand = Math.random() / luck_mult 
+
+    let rand = Math.random()
     for (let i = 0; i < rarity_mult.length; i++) {
-        const rarity = rarity_mult[i][i] 
-        console.log(rand)
+        const rarity = rarity_mult[i][i] * luck_mult 
+        console.log(rarity)
         if(rand <= rarity){
             return i;
         }
-        rand -= rarity
+        rand -= rarity;
         
     }
 
@@ -72,11 +73,11 @@ function rollRarity(luck_mult){
 function rollUpgrade(luck_mult){
     let rand = Math.random() 
     for(let i = 0; i < upgrade_mult.length; i++){
-        const rarity = upgrade_mult[i][i]
-        if(rand <= rarity * luck_mult){
+        const rarity = upgrade_mult[i][i] * luck_mult
+        if(rand <= rarity){
             return i-1;
         }
-        rand -= rarity;
+        rand -= rarity
     }
 
     return -1;

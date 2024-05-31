@@ -84,6 +84,7 @@ module.exports = {
                 let page = new EmbedBuilder()
                 .setTitle(`${user.tag}'s Quote Collection!`)
                 .setThumbnail(user.displayAvatarURL())
+                .setColor([23,20,30])
                 .setFooter({text: "Unique Quotes: "+ unique_quotes.toString()})
                 .addFields([{
                     name: 'Bucks: ',
@@ -99,20 +100,21 @@ module.exports = {
                 });
                 pages.push(page)
             });
+            let id_rand = Math.round(Math.random() * 100)
             const back_btn = new ButtonBuilder()
-                .setCustomId('back')
+                .setCustomId(`${id_rand}-quote_col_back`)
                 .setLabel('Back')
                 .setStyle(ButtonStyle.Success)
 
             const next_btn = new ButtonBuilder()
-            .setCustomId('next')
+            .setCustomId(`${id_rand}-quote_col_next`)
             .setLabel('Next')
             .setStyle(ButtonStyle.Success)
 
          
             
             const view_btn = new ButtonBuilder()
-            .setCustomId('view')
+            .setCustomId(`${id_rand}-quote_col_view`)
             .setLabel('View')
             .setStyle(ButtonStyle.Success)
             
@@ -137,7 +139,7 @@ module.exports = {
 
             collector.on('collect', async i =>{
                     const selection = i.customId
-                    if(selection === 'next'){
+                    if(selection === `${id_rand}-quote_col_next`){
                         if(view_mode){
                             if(selected_quote < unique_quotes-1){
                                 selected_quote += 1
@@ -153,7 +155,7 @@ module.exports = {
                             }
                             await interaction.editReply({embeds: [pages[current_page]], components: [row]})
                         }
-                    }else if(selection === 'back'){
+                    }else if(selection === `${id_rand}-quote_col_back`){
                         if(view_mode){
                             if(selected_quote > 0){
                                 selected_quote -= 1
@@ -169,7 +171,7 @@ module.exports = {
                             }
                             interaction.editReply({embeds: [createQuoteEmbed_Collection(getQuoteID(unsorted_quotes[selected_quote]),user)], components: [row]})
                         }
-                    }else if(selection === 'view'){
+                    }else if(selection === `${id_rand}-quote_col_view`){
                         if(view_mode){
                             view_mode = false
                             await interaction.editReply({embeds: [pages[current_page]], components: [row]})

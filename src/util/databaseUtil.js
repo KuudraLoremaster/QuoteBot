@@ -9,7 +9,7 @@ const { log } = require('./logger');
 const { createQuoteEmbed, createUpgradeEmbed } = require('./quoteEmbed');
 const admins = require('../json/globals.json').admins
 
-new_query = 'CREATE TABLE IF NOT EXISTS users(id INTEGER PRIMARY KEY, userID, quotes, quotebucks,tag, daily INTEGER DEFAULT 0, upgrades, luck_mult INTEGER DEFAULT 1, money_mult INTEGER DEFAULT 1, q_daily INTEGER DEFAULT 0)'
+new_query = 'CREATE TABLE IF NOT EXISTS users(id INTEGER PRIMARY KEY, userID, quotes, quotebucks,tag, daily INTEGER DEFAULT 0, upgrades, luck_mult INTEGER DEFAULT 1, money_mult INTEGER DEFAULT 1, q_daily INTEGER DEFAULT 0, streak INTEGER DEFAULT 0, last_daily_t INTEGER DEFAULT 0)'
 
 function createDB(){
     db.exec(new_query)
@@ -27,7 +27,7 @@ function isUserAdmin(id){
 }
 
 function getStats(id){
-    return db.prepare(`SELECT luck_mult,money_mult,q_daily FROM users WHERE userID='${id}'`).get()
+    return db.prepare(`SELECT luck_mult,money_mult,q_daily,streak FROM users WHERE userID='${id}'`).get()
     
 }
 
@@ -38,7 +38,7 @@ function addQuote(id, cooldown, interaction, ignore_daily=false){
         return -1
     }
     
-   
+    configStreak(interaction.user.id)
 
     sql = `SELECT * FROM users WHERE tag='${interaction.user.tag}'`
             const userArray = db.prepare(sql).all();
@@ -209,5 +209,37 @@ function getQuoteID(name){
     return 8 // failsafe
 }
 
+function configStreak(user_id){
+    const q = db.prepare(`SELECT streak,last_daily_t FROM users WHERE userID='${user_id}'`).get()
+    let streak = q.streak
+    let t = q.last_daily_t
+    console.log(streak)
+    console.log(t)
+    if(streak == null || t == null){
+        db.prepare(`UPDATE users SET streak=${1},last_daily_t=${Date.now()} WHERE userID='${user_id}'`).run()
+    
+    }
+    if(Date.now() >= t+172800){
+        db.prepare(`UPDATE users SET streak=1,last_daily_t=${Date.now()} WHERE userID='${user_id}'`).run()
+        return
+    }
+    db.prepare(`UPDATE users SET streak=${streak+1},last_daily_t=${Date.now()} WHERE userID='${user_id}'`).run()
+}
 
-module.exports = {createDB, addUpgrade, useUpgrade, getDaily, getLuckMult, getMoneyMult, getDB, resetMult, addQuote, resetDaily, getQuoteID, getStats}
+function getStreak(user_id){
+    return db.prepare(`SELECT streak FROM users WHERE userID='${user_id}'`).all().streak
+}
+
+function dumpUsersForLB(){
+    return db.prepare('SELECT tag, quotebucks FROM users').all()
+
+}
+
+function dumpUsersForLB_streak(){
+    return db.prepare('SELECT tag, streak FROM users').all()
+
+}
+
+
+
+module.exports = {createDB, addUpgrade, useUpgrade, configStreak, getStreak, getDaily, getLuckMult, getMoneyMult, getDB, dumpUsersForLB, resetMult, addQuote, resetDaily, getQuoteID, getStats, dumpUsersForLB_streak}
