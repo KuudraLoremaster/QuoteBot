@@ -19,6 +19,7 @@ console.log(users)
 
 
 module.exports = {
+    cooldown: 60,
     data: new SlashCommandBuilder()
     .setName('setup')
     .setDescription('refresh commands (has to be used once)')
@@ -30,7 +31,7 @@ module.exports = {
                 const rest = new REST().setToken(process.env.token);
                 // The put method is used to fully refresh all commands in the guild with the current set
                 const data = await rest.put(
-                    Routes.applicationGuildCommands('1235165635739389983', interaction.guild.id),
+                    Routes.applicationGuildCommands('1228093850740854824', interaction.guild.id),
                     { body: client.commandArray },
                 );
         

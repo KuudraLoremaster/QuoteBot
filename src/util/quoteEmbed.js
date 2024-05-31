@@ -75,9 +75,18 @@ function createQuoteEmbed_Collection(id, user){
     return quote_embed
 }
 
-function createUpgradeEmbed(id){
+function createUpgradeEmbed(id, amount=1){
     upgrade_embed = new EmbedBuilder()
-            .setTitle("You got "+upgrades[id].name+" Upgrade!")
+            .setTitle("You got "+upgrades[id].name+" Upgrade! (x" + amount.toString()+")")
+            .setDescription(upgrades[id].description)
+            .setColor([0,0,0])
+            .setThumbnail(upgrades[id].sprite)
+    return upgrade_embed
+}
+
+function createUpgradeEmbed_Collection(id){
+    upgrade_embed = new EmbedBuilder()
+            .setTitle(upgrades[id].name+" Upgrade")
             .setDescription(upgrades[id].description)
             .setColor([0,0,0])
             .setThumbnail(upgrades[id].sprite)
@@ -85,4 +94,4 @@ function createUpgradeEmbed(id){
 }
 
 
-module.exports = {createQuoteEmbed, createUpgradeEmbed, createQuoteEmbed_Collection}
+module.exports = {createQuoteEmbed, createUpgradeEmbed, createQuoteEmbed_Collection, createUpgradeEmbed_Collection}
